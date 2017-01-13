@@ -1,0 +1,27 @@
+<%= form_for(duenio) do |f| %>
+  <% if duenio.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(duenio.errors.count, "error") %> prohibited this duenio from being saved:</h2>
+
+      <ul>
+      <% duenio.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %>
+    <%= f.text_field :nombre %>
+  </div>
+
+  <div class="field">
+    <%= f.label :edad %>
+    <%= f.number_field :edad %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
